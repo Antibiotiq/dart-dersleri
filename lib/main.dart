@@ -11,7 +11,6 @@ Function degiskenler() {
   // variables = değişkenler
 
   var cumle = "bu cümle değişkendir";
-  
 
   print(cumle);
 
