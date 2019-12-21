@@ -1,8 +1,54 @@
 main() {
-// fonksiyon çağırma
+// main foksiyonda diğer fonksiyonları çağırıyoruz
   degiskenler();
+  // kısa fonksiyonu yazdırıyoruz
+  kisafonk();
+  //kısa fonksiyon2 yi yazdırıyoruz
+  print(kisafonk2());
+  //fonksiyona değer gönderiyoruz
+  selamVer("Murat");
+  topla(10, 5);
+  //opsiyonsuz değer gönderiyoruz
+  carp(10, 9);
+  // opsiyonlu değer gönderiyoruz. opsiyondaki y parametresine "2" değerini atamıştık. 15 ile 2 yi çarpıp çıkan değeri gönderiyoruz.
+  carp(15);
+
+  // anonim fonksiyonlar
+  // print yani yazdır fonksiyonu
+
+  List liste = const ["ali", "veli", "kırkdokuz elli :)"];
+
+  liste.forEach((eleman) => print("Merhaba $eleman"));
+
+  ustfonksiyon("Mehmet");
 }
 
+//Operatörler
+
+
+
+// içe içe fonksiyonlar
+
+ustfonksiyon(String ilkDeger) {
+  int ilkSayi = 43;
+  print(ilkDeger);
+
+  ikincifonksiyon(String ikinciDeger) {
+    int ikinciSayi = 65;
+    print(ikinciDeger);
+    print(ilkSayi);
+
+    sonFonksiyon() {
+      print("Merhaba $ilkDeger $ilkSayi ve $ikinciDeger $ikinciSayi");
+    }
+
+    sonFonksiyon();
+  }
+
+  ikincifonksiyon("Ali");
+}
+
+// ilk function örneği
 Function degiskenler() {
   //print("bu kısım çalışmayacak");
 
@@ -149,4 +195,25 @@ Function degiskenler() {
 //fonksiyon yazdırma
 ozelFonksiyon(int gelecekSayi) {
   print("girdiğiniz sayı $gelecekSayi");
+}
+
+// kısayoldan fonksiyon tanımlama
+
+kisafonk() => print("kısa fonksiyon böyle tanımlanır");
+String kisafonk2() => "kısa fonksiyon böyle tanımlanır 2";
+
+// fonksiyonlara değer gönderme
+
+selamVer(String deger) {
+  print("Merhaba $deger! nasılsın ?");
+}
+
+topla(num x, num y) {
+  print(x * y);
+}
+
+// isteğe bağlı değerler [optional] köşeli parantezler ile yazılır. Varsayılan değer tanımlanabilir. = operatörü kullanılır.num
+
+carp(num x, [num y = 2]) {
+  print(x * y);
 }
